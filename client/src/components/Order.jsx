@@ -78,11 +78,11 @@ const Order = () => {
           <div className="w-[90%] mx-auto pt-16 flex flex-1 md:py-3">
             <form
               onSubmit={placeOrder}
-              className="grid grid-cols-1 max-w-[500px] md:max-w-none mx-auto lg:grid-cols-2 h-screen place-content-center w-full "
+              className="grid grid-cols-1 max-w-[500px] md:max-w-none mx-auto lg:grid-cols-2 md:h-screen py-10 place-content-center w-full "
             >
               <div className="mx-auto">
                 <h1 className="pb-2 font-bold text-xl">Delivery Information</h1>
-                <div className="space-x-3">
+                <div className="flex md:flex-row items-start md:items-center justify-center space-y-2 md:space-y-0  flex-col w-full md:space-x-3">
                   <input
                     type="text"
                     name="firstName"
@@ -90,7 +90,7 @@ const Order = () => {
                     value={userData.firstName}
                     required
                     placeholder="First name"
-                    className="md:md:w-[350px]   lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
                   />
                   <input
                     type="text"
@@ -99,7 +99,7 @@ const Order = () => {
                     onChange={handleChange}
                     required
                     value={userData.lastName}
-                    className="md:md:w-[350px]  lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] md:w-[350px]  lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
                   />
                 </div>
                 <div className="flex flex-col  space-y-3 mt-3">
@@ -110,7 +110,7 @@ const Order = () => {
                     required
                     value={userData.email}
                     placeholder="Email address"
-                    className=" p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] md:w-full p-2 border-2 border-[#ccc] rounded-md"
                   />
                   <input
                     type="text"
@@ -119,11 +119,11 @@ const Order = () => {
                     onChange={handleChange}
                     required
                     value={userData.street}
-                    className="p-2 border-2 border-[#ccc] rounded-md "
+                    className="w-[300px] md:w-full p-2 border-2 border-[#ccc] rounded-md "
                   />
                 </div>
 
-                <div className="flex space-x-3 mt-3 ">
+                <div className="flex md:my-3 md:flex-row items-start md:items-center justify-center space-y-2 md:space-y-0  flex-col w-full md:space-x-3">
                   <input
                     type="text"
                     placeholder="City"
@@ -131,7 +131,7 @@ const Order = () => {
                     onChange={handleChange}
                     required
                     value={userData.city}
-                    className="md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] mt-3 md:mt-0 md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
                   />
 
                   <input
@@ -141,10 +141,10 @@ const Order = () => {
                     onChange={handleChange}
                     required
                     value={userData.state}
-                    className="md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px]  md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
                   />
                 </div>
-                <div className="space-x-3 mt-3">
+                <div className="flex md:flex-row md: items-start md:items-center justify-center space-y-2 md:space-y-0  flex-col w-full md:space-x-3">
                   <input
                     type="text"
                     name="zipcode"
@@ -152,7 +152,7 @@ const Order = () => {
                     required
                     value={userData.zipcode}
                     placeholder="Zip Code"
-                    className="md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] mt-3 md:mt-0 md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
                   />
 
                   <input
@@ -162,7 +162,7 @@ const Order = () => {
                     onChange={handleChange}
                     required
                     value={userData.country}
-                    className="md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] mt-1  md:mt-0 md:w-[350px] lg:w-auto p-2 border-2 border-[#ccc] rounded-md"
                   />
                 </div>
 
@@ -174,7 +174,7 @@ const Order = () => {
                     onChange={handleChange}
                     value={userData.phone}
                     placeholder="Phone"
-                    className="w-[80%] p-2 border-2 border-[#ccc] rounded-md"
+                    className="w-[300px] md:w-[80%] p-2 border-2 border-[#ccc] rounded-md"
                   />
                 </div>
               </div>
@@ -183,17 +183,17 @@ const Order = () => {
                 <div className="flex flex-col space-y-3">
                   <div className=" flex items-center justify-between">
                     <p className="">Subtotal</p>
-                    <p className="mr-5">{getTotalAmount()}</p>
+                    <p className="mr-5">Rs {getTotalAmount()}</p>
                   </div>
                   <hr />
                   <div className="flex items-center justify-between">
                     <p>Delivery Fees</p>
-                    <p className="mr-5">{10}</p>
+                    <p className="mr-5">Rs {10}</p>
                   </div>
                   <hr />
                   <div className="flex items-center justify-between pb-3">
                     <p>Total</p>
-                    <b className="mr-5">{getTotalAmount() + 10}</b>
+                    <b className="mr-5">Rs {getTotalAmount() + 10}</b>
                   </div>
                   <button
                     type="submit"

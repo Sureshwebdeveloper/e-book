@@ -56,17 +56,17 @@ const Cart = () => {
           <div className="flex flex-col space-y-3">
             <div className=" flex items-center justify-between">
               <p className="">Subtotal</p>
-              <p className="mr-5">{getTotalAmount()}</p>
+              <p className="mr-5">Rs {" "} {getTotalAmount()}</p>
             </div>
             <hr />
             <div className="flex items-center justify-between">
               <p>Delivery Fees</p>
-              <p className="mr-5">{10}</p>
+              <p className="mr-5">Rs {10}</p>
             </div>
             <hr />
             <div className="flex items-center justify-between pb-3">
               <p>Total</p>
-              <b className="mr-5">{getTotalAmount() + 10}</b>
+              <b className="mr-5">Rs {getTotalAmount() + 10}</b>
             </div>
             <button
               className=" bg-orange-600 font-semibold text-base text-white py-2 rounded max-w-[250px] uppercase"
