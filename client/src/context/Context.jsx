@@ -19,7 +19,7 @@ const StoreContextProvider = (props) => {
   // Fetching Time Loading
   const [loading, setLoading] = useState(false);
 
-  const url = "http://localhost:2000/api";
+  const url = "https://e-book-server-u1c4.onrender.com/api";
 
   const addToCart = async (itemId) => {
     if (!cartItem[itemId]) {
