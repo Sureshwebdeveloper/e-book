@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading,setLoading] = useState(false);
   const [update, setUpdate] = useState([]);
-  const url = "http://localhost:2000/api";
+  const url = "https://e-book-server-u1c4.onrender.com/api";
 
   const fetchData = async () => {
     setLoading(true)
