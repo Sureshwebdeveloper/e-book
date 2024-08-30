@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities{
+    .custom-grid{
+        width: 70vw;
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 0.5fr;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px;
+        border: 1px solid #292525;
+        font-size: 13px;
+    }
+    
+    .custom-grid-sm{
+        width: 70vw;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr 1fr;
+        align-items: center;
+        border: 1px solid #292525;
+        padding: 10px 13px;
+        gap: 15px;
+    }
+
+    .custom-grid-user{
+        width: 60vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px;
+        border: 1px solid #292525;
+        font-size: 13px;
+    }
+
+    
+    .custom-grid-sm{
+        width: 70vw;
+        display: grid;
+        grid-template-columns: 8fr 1fr 1fr;
+        border: 1px solid #292525;
+        /* padding: 10px 13px; */
+        /* gap: 15px; */
+    }
+}
+
+@layer components {
+    form label, .form-label{
+        @apply pt-3 font-mono font-bold text-base
+    }
+
+    .form-label-update-book{
+        @apply pt-3 pl-3 font-mono font-bold text-base
+    }
+
+    .admin-card{
+        @apply flex items-center justify-start w-10/12 gap-4 
+    }
+
+    .card-icon{
+        @apply text-2xl font-semibold text-[#149746] ml-4 md:ml-0
+    }
+
+    .input{
+        @apply max-w-[90%] md:px-24  py-2 rounded  cursor-pointer  border shadow-md border-[#ff2a00] outline-none lg:px-16
+    }
+
+    .update-book-input{
+        @apply max-w-[90%] px-20 ml-4  py-2 rounded  cursor-pointer  border shadow-md border-[#ff2a00] outline-none lg:px-16
+    }
+
+    .uploadbook{
+        @apply  max-w-[30%]  py-2 rounded pl-1 cursor-pointer md:w-10/12 border shadow-md border-[#ff2a00] outline-none 
+    }
+
+    .admin-card p {
+        @apply font-bold text-lg cursor-pointer
+    }
+}
