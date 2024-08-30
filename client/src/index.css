@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer utilities {
+  .card {
+    /* margin: auto; */
+    place-items: center;
+    display: grid;
+    /* height: fit-content; */
+    width: 100%;
+    padding: 100px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    gap: 10px;
+  }
+
+  /* For Shoping Page and single book page */
+  .loader-card {
+    place-items: center;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+  }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #000000;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #1a14c6;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+
+
+/* For Trending Books */
+  .loader-home {
+    width: 200px;
+    height: 140px;
+    background: #979794;
+    box-sizing: border-box;
+    position: relative;
+    border-radius:8px;
+    perspective: 1000px;
+  }
+
+  .loader-home:before{
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    border-radius:8px;
+    background: #f5f5f5  no-repeat;
+    background-size: 60px 10px;
+    background-image: 	linear-gradient(#ddd 100px, transparent 0) ,
+              linear-gradient(#ddd 100px, transparent 0), 
+              linear-gradient(#ddd 100px, transparent 0), 
+              linear-gradient(#ddd 100px, transparent 0), 
+              linear-gradient(#ddd 100px, transparent 0), 
+              linear-gradient(#ddd 100px, transparent 0);
+    
+    background-position: 15px 30px , 15px 60px , 15px 90px, 
+              105px 30px , 105px 60px , 105px 90px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  }
+  .loader-home:after {
+    content: '';
+      position: absolute;
+      width: calc(50% - 10px);
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      border-radius: 8px;
+      background: #ffffff00 no-repeat;
+      background-size: 60px 10px;
+      background-image: linear-gradient(#ddd 100px, transparent 0), 
+              linear-gradient(#ddd 100px, transparent 0), 
+              linear-gradient(#ddd 100px, transparent 0);
+      background-position: 50% 30px ,50% 60px , 50%  90px;
+      transform: rotateY(0deg );
+      transform-origin: left center;
+    animation: paging 1s linear infinite;
+  }
+
+
+  @keyframes paging {
+    to {
+      transform: rotateY( -180deg );
+    }
+  }
+
+
+
+  .card-sm {
+    margin: auto;
+    place-items: center;
+    display: grid;
+    height: auto;
+    padding-top: 120px;
+    z-index: 1;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+
+  .suggest-card{
+    display: grid;
+    width: 80%;
+    padding-top: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 3fr));
+    gap: 8px;
+  }
+
+  .suggest-card-md{
+    display: grid;
+    width: 95%;
+    padding-top: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
+    gap: 8px;
+  }
+
+  .suggest-card-lg{
+    display: grid;
+    width: 80%;
+    padding-top: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 3fr));
+    gap: 8px;
+  }
+
+  .card-trending {
+    margin: auto;
+    place-items: center;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    gap: 10px;
+  }
+
+
+  .custom-grid{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+    padding: 12px 15px;
+    border: 1px solid #292525;
+    font-size: 13px;
+}
+
+.custom-grid-sm{
+    width: 90vw;
+    display: grid;
+    margin: auto;
+    grid-template-columns:0.5fr 1fr 0.5fr 1fr 1fr 0.5fr;
+    align-items: center;
+    border: 1px solid #292525;
+    padding: 20px 5px;
+    gap: 8px;
+}
+}
